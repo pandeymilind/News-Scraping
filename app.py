@@ -1,7 +1,7 @@
 from flask import Flask,redirect,url_for,render_template,request
 
 def newsdata():
-    import Write_file
+    import csv_file
     Write_file.write_()
     global news_list,news_link,image_link,link_list,send_list,list_link,news_time
     news_list=Write_file.news_list
