@@ -2,9 +2,6 @@ from bs4 import BeautifulSoup
 import requests
 import csv
 
-
-import webbrowser
-
 url="https://news.google.com/topics/CAAqKggKIiRDQkFTRlFvSUwyMHZNRFZxYUdjU0JXVnVMVWRDR2dKSlRpZ0FQAQ?hl=en-IN&gl=IN&ceid=IN%3Aen"
 
 result=requests.get(url)
