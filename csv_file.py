@@ -1,7 +1,7 @@
 import webbrowser
 import csv
 
-import Main
+import Scrapping
 news_time,image_link,news_link,news_list=[],[],[],[]
 
 def write_():    
