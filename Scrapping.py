@@ -1,6 +1,9 @@
 from bs4 import BeautifulSoup
 import requests
 import csv
+import time
+
+import webbrowser
 
 url="https://news.google.com/topics/CAAqKggKIiRDQkFTRlFvSUwyMHZNRFZxYUdjU0JXVnVMVWRDR2dKSlRpZ0FQAQ?hl=en-IN&gl=IN&ceid=IN%3Aen"
 
@@ -12,9 +15,10 @@ prt=doc.prettify()
 
 print()
 
-headlines=doc.find_all(class_="WwrzSb")
+headlines=doc.find_all(class_="gPFEn")
 image=doc.find_all(class_="Quavad")
 time=doc.find_all(class_="hvbAAd")
+link_web=doc.find_all(class_="WwrzSb")
 count_=len(headlines)
 image_size=len(image)
 
@@ -28,8 +32,8 @@ c=0
 for i in range(count_):
     if c==0:
         # print(i,headlines[i]["href"])
-        news_headlines.append(headlines[i]["aria-label"])
-        news_link.append(headlines[i]["href"])
+        news_headlines.append(headlines[i].string)
+        news_link.append(link_web[i]["href"])
         news_time.append(time[i].string)
 
         c+=1
